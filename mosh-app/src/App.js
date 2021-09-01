@@ -21,11 +21,17 @@ class App extends Component {
         this.setState({counters})
     }
     handleIncrement = counter => {
-           const counters=[...this.state.counters];
-           const index=counters.indexOf(counter)
-           counters[index]={...counter};
-           counters[index].value++;
+            const counters=[...this.state.counters];
+            var foundElement = counters.filter(counterElement => {return counterElement.id === counter})
+            // console.log(foundElement)
+
+            console.log(foundElement[0].value++)
+            
+            // const index=counters.indexOf(counter)
+        //    counters[index]={...counter};
+        //    counters[index].value++;
            this.setState({counters});
+
         
             // const clone=this.state.counters;
             // const index=clone.indexOf(counter.id);
